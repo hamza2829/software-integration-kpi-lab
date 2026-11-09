@@ -4,6 +4,8 @@ A Python 3.12 CLI for integration teams that receive test and issue exports from
 
 ## Dashboard
 
+![Dashboard screenshot with six synthetic deliveries, KPI trends, and release decisions](docs/dashboard-preview.png)
+
 The CI workflow builds a self-contained dashboard from six fictional deliveries. Download the `dashboard` artifact from a workflow run and open `reports/dashboard.html` in a browser. The same artifact contains the weekly status, Excel workbook, raw CLI JSON and coverage evidence.
 
 ## Quick start
@@ -73,7 +75,9 @@ flowchart LR
 
 ## Verification
 
-GitHub Actions runs Ruff and pytest with coverage on Python 3.12. It also invokes all four CLI commands on the synthetic data and uploads the resulting dashboard and exports.
+**49 tests passed** on Python 3.12 with **100.00% line coverage** (619/619 statements).
+
+GitHub Actions runs Ruff and pytest with coverage on Python 3.12. It also invokes all four CLI commands on the synthetic data and uploads the resulting dashboard and exports. [GitHub Actions workflow](https://github.com/hamza2829/software-integration-kpi-lab/actions/workflows/ci.yml)
 
 ## Limits
 
