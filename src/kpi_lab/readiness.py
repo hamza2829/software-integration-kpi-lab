@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from .metrics import Delivery, KPIs, Risk
+from .metrics import Delivery, KPIs, Risk, TestHistory, calculate
 
 
 @dataclass(frozen=True)
@@ -107,6 +107,6 @@ def assess(deliveries: list[Delivery], gates: Gates,
         results.append(Readiness(delivery.name, "NO GO" if reasons else "GO", reasons,
                                  delivery.kpis.risks, schedule.get(delivery.name, [])))
     for name in sorted(schedule.keys() - {delivery.name for delivery in deliveries}):
-        results.append(Readiness(name, "NO GO", ["No test or issue data imported"], [],
-                                 schedule[name]))
+        no_data = calculate(TestHistory(), [], date.min)
+        results.append(Readiness(name, "NO GO", failed_gates(no_data, gates), [], schedule[name]))
     return results

@@ -60,7 +60,7 @@ def milestone_rows(decisions: list[Readiness]) -> Iterable[tuple]:
 def activity_rows(deliveries: list[Delivery]) -> Iterable[tuple]:
     for delivery, component, kpis in scoped(deliveries):
         for week in kpis.weeks:
-            yield delivery, component, week.starts, week.new, week.closed
+            yield delivery, component or "All components", week.starts, week.new, week.closed
 
 
 def table(headers: tuple, rows: Iterable[tuple], *, compact: bool = False) -> str:
@@ -88,6 +88,7 @@ def list_html(values: list[str]) -> str:
 
 def chart(title: str, deliveries: list[Delivery],
           series: list[tuple[str, list[float | None]]], ceiling: int) -> str:
+    title = escape(title)
     if not deliveries:
         return f"<h3>{title}</h3><p>No deliveries with imported data.</p>"
     ticks = []
@@ -149,6 +150,19 @@ def dashboard(deliveries: list[Delivery], decisions: list[Readiness], as_of: dat
         ("Blocker or critical", [item.kpis.open_by_severity["blocker"] +
                                  item.kpis.open_by_severity["critical"] for item in deliveries]),
     ], max(4, ((max(totals, default=0) + 3) // 4) * 4))
+    component_charts = []
+    for component in sorted({name for item in deliveries for name in item.components}):
+        history = [item.components.get(component) for item in deliveries]
+        graph = chart(f"{component} (%)", deliveries, [
+            ("Progress", [kpis.progress_pct if kpis else None for kpis in history]),
+            ("Pass rate", [kpis.pass_rate_pct if kpis else None for kpis in history]),
+        ], 100)
+        component_charts.append(f'<div class="panel">{graph}</div>')
+    component_trends = (
+        '<details class="panel"><summary>Test trends by component</summary>'
+        f'<div class="charts">{"".join(component_charts)}</div></details>'
+        if component_charts else ""
+    )
     overview = table(("Delivery", *TEST_HEADERS, "Open issues"), text_rows(
         (item.name, *test_values(item.kpis), total)
         for item, total in zip(deliveries, totals, strict=True)
@@ -195,6 +209,7 @@ def dashboard(deliveries: list[Delivery], decisions: list[Readiness], as_of: dat
   <div class="cards">{cards_html}</div>
   <section id="trends"><h2>KPI trends by delivery</h2>
     <div class="charts"><div class="panel">{health}</div><div class="panel">{backlog}</div></div>
+    {component_trends}
   </section>
   <section id="overview"><h2>Delivery overview</h2><div class="panel">
     {overview}

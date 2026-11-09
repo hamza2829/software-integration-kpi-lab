@@ -16,6 +16,7 @@ def test_dashboard_and_weekly_status(lab, tmp_path):
     html = (out / "dashboard.html").read_text(encoding="utf-8")
     for phrase in ("<svg ", "<style>", "Synthetic data", "KPI trends by delivery",
                    "Delivery overview", "Weekly issue activity", "Component test KPIs",
+                   "Test trends by component", "Payments (%)", "All components",
                    "Release readiness", "Open risks", "Integration cutoff", "LAB-1",
                    'class="badge go"', 'class="badge no-go"', "66.67", "2025-03-17"):
         assert phrase in html

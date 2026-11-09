@@ -24,7 +24,7 @@ nav a:hover { text-decoration: underline; }
 h1 { font-size: clamp(2rem, 5vw, 3rem); margin: .16em 0 .08em; line-height: 1.12; }
 h2 { font-size: 1.33rem; margin: 0 0 12px; }
 h3 { font-size: 1rem; margin: 0 0 10px; }
-main { padding-block: 24px 36px !important; }
+main.frame { padding-block: 24px 36px; }
 .cards, .charts { display: grid; gap: 14px; }
 .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .charts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -54,8 +54,8 @@ svg text { fill: var(--muted); font: 11px system-ui, sans-serif; }
   background: var(--series); border-radius: 50%; margin-right: 5px; }
 details { margin-top: 12px; }
 summary { cursor: pointer; font-weight: 650; }
-details .scroll { margin-top: 10px; }
-footer { color: var(--muted); padding-block: 0 28px !important; }
+details .scroll, details .charts { margin-top: 10px; }
+footer.frame { color: var(--muted); padding-bottom: 28px; }
 @media (max-width: 790px) {
   .frame { padding-inline: 18px; }
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }

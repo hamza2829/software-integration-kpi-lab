@@ -46,6 +46,8 @@ def test_readiness_shows_all_failures_risks_and_milestones(lab, capsys):
     assert [risk["key"] for risk in first["risks"]] == ["LAB-1", "LAB-2", "LAB-4"]
     assert first["milestones"][0] == {"name": "Integration cutoff", "day": "2025-03-19"}
     assert planned["delivery"] == "D3"
+    assert len(planned["reasons"]) == 2
+    assert all("unavailable" in reason for reason in planned["reasons"])
 
 
 @pytest.mark.parametrize(("content", "message"), [
