@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "software-integration-kpi-lab"
+version = "0.1.0"
+description = "Integration KPIs and release readiness from JUnit and issue exports"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "defusedxml>=0.7,<1",
+    "openpyxl>=3.1,<4",
+    "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1"]
+
+[project.scripts]
+integration-kpi = "kpi_lab.cli:main"
+integration-kpi-sample = "kpi_lab.synthetic:main"
+
+[tool.setuptools.package-data]
+kpi_lab = ["dashboard.css"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]

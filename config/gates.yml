@@ -1,0 +1,4 @@
+min_progress_pct: 95
+min_pass_rate_pct: 98
+max_open_blockers: 0
+max_critical_age_days: 14
