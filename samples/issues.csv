@@ -1,0 +1,73 @@
+key,summary,severity,status,created,resolved,component,delivery
+SYN-1001,Coupon total rounds incorrectly for split tax,critical,Done,2025-03-04,2025-03-07,Order API,Delivery-01
+SYN-1002,Postal code validation drops leading zeros,major,Reopened,2025-03-01,,Order API,Delivery-01
+SYN-1003,Duplicate SKU error omits the affected cart line,minor,Done,2025-03-04,2025-03-07,Order API,Delivery-01
+SYN-1004,Order response exposes a retired field,trivial,Done,2025-03-02,2025-03-04,Order API,Delivery-01
+SYN-1005,Duplicate callback can capture the same authorization twice,blocker,Reopened,2025-03-05,,Payment Gateway,Delivery-01
+SYN-1006,Reconciliation ignores late partial refunds,major,Done,2025-02-28,2025-03-01,Payment Gateway,Delivery-01
+SYN-1007,Provider timeout leaves authorization state unknown,minor,To Do,2025-03-04,,Payment Gateway,Delivery-01
+SYN-1008,Decline response has inconsistent retry hints,trivial,Done,2025-03-04,2025-03-06,Payment Gateway,Delivery-01
+SYN-1009,Worker skips labels after reconnecting to the broker,critical,Done,2025-03-05,2025-03-07,Shipment Worker,Delivery-01
+SYN-1010,Carrier retry moves valid shipments to dead letter,major,Done,2025-03-05,2025-03-08,Shipment Worker,Delivery-01
+SYN-1011,Tracking links are missing for split shipments,minor,Done,2025-02-27,2025-03-01,Shipment Worker,Delivery-01
+SYN-1012,Manifest export truncates long carrier references,trivial,Done,2025-03-01,2025-03-03,Shipment Worker,Delivery-01
+SYN-1013,Coupon total rounds incorrectly for split tax,critical,Done,2025-03-07,2025-03-08,Order API,Delivery-02
+SYN-1014,Postal code validation drops leading zeros,major,In Progress,2025-03-09,,Order API,Delivery-02
+SYN-1015,Duplicate SKU error omits the affected cart line,minor,In Progress,2025-03-11,,Order API,Delivery-02
+SYN-1016,Order response exposes a retired field,trivial,Done,2025-03-09,2025-03-10,Order API,Delivery-02
+SYN-1017,Duplicate callback can capture the same authorization twice,critical,Done,2025-03-06,2025-03-09,Payment Gateway,Delivery-02
+SYN-1018,Reconciliation ignores late partial refunds,major,In Progress,2025-03-09,,Payment Gateway,Delivery-02
+SYN-1019,Provider timeout leaves authorization state unknown,minor,Done,2025-03-07,2025-03-09,Payment Gateway,Delivery-02
+SYN-1020,Decline response has inconsistent retry hints,trivial,Done,2025-03-11,2025-03-13,Payment Gateway,Delivery-02
+SYN-1021,Worker skips labels after reconnecting to the broker,critical,Reopened,2025-02-17,,Shipment Worker,Delivery-02
+SYN-1022,Carrier retry moves valid shipments to dead letter,major,Done,2025-03-09,2025-03-11,Shipment Worker,Delivery-02
+SYN-1023,Tracking links are missing for split shipments,minor,To Do,2025-03-10,,Shipment Worker,Delivery-02
+SYN-1024,Manifest export truncates long carrier references,trivial,Done,2025-03-10,2025-03-11,Shipment Worker,Delivery-02
+SYN-1025,Coupon total rounds incorrectly for split tax,critical,Done,2025-03-13,2025-03-14,Order API,Delivery-03
+SYN-1026,Postal code validation drops leading zeros,major,Done,2025-03-13,2025-03-14,Order API,Delivery-03
+SYN-1027,Duplicate SKU error omits the affected cart line,minor,To Do,2025-03-15,,Order API,Delivery-03
+SYN-1028,Order response exposes a retired field,trivial,Done,2025-03-19,2025-03-20,Order API,Delivery-03
+SYN-1029,Duplicate callback can capture the same authorization twice,critical,Done,2025-03-18,2025-03-20,Payment Gateway,Delivery-03
+SYN-1030,Reconciliation ignores late partial refunds,major,To Do,2025-03-16,,Payment Gateway,Delivery-03
+SYN-1031,Provider timeout leaves authorization state unknown,minor,To Do,2025-03-15,,Payment Gateway,Delivery-03
+SYN-1032,Decline response has inconsistent retry hints,trivial,Done,2025-03-18,2025-03-19,Payment Gateway,Delivery-03
+SYN-1033,Worker skips labels after reconnecting to the broker,critical,Done,2025-03-15,2025-03-16,Shipment Worker,Delivery-03
+SYN-1034,Carrier retry moves valid shipments to dead letter,major,To Do,2025-03-17,,Shipment Worker,Delivery-03
+SYN-1035,Tracking links are missing for split shipments,minor,Done,2025-03-19,2025-03-20,Shipment Worker,Delivery-03
+SYN-1036,Manifest export truncates long carrier references,trivial,Done,2025-03-14,2025-03-16,Shipment Worker,Delivery-03
+SYN-1037,Coupon total rounds incorrectly for split tax,critical,Done,2025-03-25,2025-03-28,Order API,Delivery-04
+SYN-1038,Postal code validation drops leading zeros,major,Done,2025-03-20,2025-03-21,Order API,Delivery-04
+SYN-1039,Duplicate SKU error omits the affected cart line,minor,To Do,2025-03-23,,Order API,Delivery-04
+SYN-1040,Order response exposes a retired field,trivial,Done,2025-03-24,2025-03-25,Order API,Delivery-04
+SYN-1041,Duplicate callback can capture the same authorization twice,critical,Done,2025-03-25,2025-03-28,Payment Gateway,Delivery-04
+SYN-1042,Reconciliation ignores late partial refunds,major,Done,2025-03-26,2025-03-27,Payment Gateway,Delivery-04
+SYN-1043,Provider timeout leaves authorization state unknown,minor,Done,2025-03-23,2025-03-26,Payment Gateway,Delivery-04
+SYN-1044,Decline response has inconsistent retry hints,trivial,Done,2025-03-25,2025-03-26,Payment Gateway,Delivery-04
+SYN-1045,Worker skips labels after reconnecting to the broker,critical,To Do,2025-03-03,,Shipment Worker,Delivery-04
+SYN-1046,Carrier retry moves valid shipments to dead letter,major,To Do,2025-03-23,,Shipment Worker,Delivery-04
+SYN-1047,Tracking links are missing for split shipments,minor,Done,2025-03-22,2025-03-25,Shipment Worker,Delivery-04
+SYN-1048,Manifest export truncates long carrier references,trivial,Done,2025-03-26,2025-03-28,Shipment Worker,Delivery-04
+SYN-1049,Coupon total rounds incorrectly for split tax,critical,Done,2025-04-02,2025-04-03,Order API,Delivery-05
+SYN-1050,Postal code validation drops leading zeros,major,To Do,2025-03-29,,Order API,Delivery-05
+SYN-1051,Duplicate SKU error omits the affected cart line,minor,In Progress,2025-03-30,,Order API,Delivery-05
+SYN-1052,Order response exposes a retired field,trivial,Done,2025-04-01,2025-04-04,Order API,Delivery-05
+SYN-1053,Duplicate callback can capture the same authorization twice,critical,Done,2025-03-28,2025-03-31,Payment Gateway,Delivery-05
+SYN-1054,Reconciliation ignores late partial refunds,major,In Progress,2025-03-30,,Payment Gateway,Delivery-05
+SYN-1055,Provider timeout leaves authorization state unknown,minor,To Do,2025-03-28,,Payment Gateway,Delivery-05
+SYN-1056,Decline response has inconsistent retry hints,trivial,Done,2025-03-28,2025-03-31,Payment Gateway,Delivery-05
+SYN-1057,Worker skips labels after reconnecting to the broker,critical,Done,2025-03-29,2025-04-01,Shipment Worker,Delivery-05
+SYN-1058,Carrier retry moves valid shipments to dead letter,major,Done,2025-03-27,2025-03-29,Shipment Worker,Delivery-05
+SYN-1059,Tracking links are missing for split shipments,minor,Done,2025-03-28,2025-03-30,Shipment Worker,Delivery-05
+SYN-1060,Manifest export truncates long carrier references,trivial,Done,2025-04-01,2025-04-02,Shipment Worker,Delivery-05
+SYN-1061,Coupon total rounds incorrectly for split tax,critical,Done,2025-04-04,2025-04-05,Order API,Delivery-06
+SYN-1062,Postal code validation drops leading zeros,major,Done,2025-04-03,2025-04-04,Order API,Delivery-06
+SYN-1063,Duplicate SKU error omits the affected cart line,minor,In Progress,2025-04-06,,Order API,Delivery-06
+SYN-1064,Order response exposes a retired field,trivial,Done,2025-04-05,2025-04-08,Order API,Delivery-06
+SYN-1065,Duplicate callback can capture the same authorization twice,critical,Done,2025-04-04,2025-04-07,Payment Gateway,Delivery-06
+SYN-1066,Reconciliation ignores late partial refunds,major,To Do,2025-04-07,,Payment Gateway,Delivery-06
+SYN-1067,Provider timeout leaves authorization state unknown,minor,Done,2025-04-04,2025-04-06,Payment Gateway,Delivery-06
+SYN-1068,Decline response has inconsistent retry hints,trivial,Done,2025-04-07,2025-04-10,Payment Gateway,Delivery-06
+SYN-1069,Worker skips labels after reconnecting to the broker,critical,Done,2025-04-06,2025-04-07,Shipment Worker,Delivery-06
+SYN-1070,Carrier retry moves valid shipments to dead letter,major,Reopened,2025-04-03,,Shipment Worker,Delivery-06
+SYN-1071,Tracking links are missing for split shipments,minor,In Progress,2025-04-07,,Shipment Worker,Delivery-06
+SYN-1072,Manifest export truncates long carrier references,trivial,Done,2025-04-07,2025-04-10,Shipment Worker,Delivery-06

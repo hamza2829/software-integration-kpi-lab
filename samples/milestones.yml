@@ -1,0 +1,19 @@
+# Synthetic milestone dates
+Delivery-01:
+  Integration cutoff: 2025-03-05
+  Release review: 2025-03-07
+Delivery-02:
+  Integration cutoff: 2025-03-12
+  Release review: 2025-03-14
+Delivery-03:
+  Integration cutoff: 2025-03-19
+  Release review: 2025-03-21
+Delivery-04:
+  Integration cutoff: 2025-03-26
+  Release review: 2025-03-28
+Delivery-05:
+  Integration cutoff: 2025-04-02
+  Release review: 2025-04-04
+Delivery-06:
+  Integration cutoff: 2025-04-09
+  Release review: 2025-04-11

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic sample data -->
+<testsuite name="synthetic.gateway_contract" timestamp="2025-03-24T09:00:00+00:00" tests="18" failures="0" skipped="1" errors="0">
+  <testcase name="test_authorizes_card" classname="gateway_contract" />
+  <testcase name="test_declines_expired_card" classname="gateway_contract" />
+  <testcase name="test_retries_timeout" classname="gateway_contract" />
+  <testcase name="test_deduplicates_callback" classname="gateway_contract" />
+  <testcase name="test_validates_signature" classname="gateway_contract" />
+  <testcase name="test_rejects_unsigned_callback" classname="gateway_contract" />
+  <testcase name="test_captures_authorization" classname="gateway_contract" />
+  <testcase name="test_voids_authorization" classname="gateway_contract" />
+  <testcase name="test_refunds_partial_amount" classname="gateway_contract" />
+  <testcase name="test_rejects_over_refund" classname="gateway_contract" />
+  <testcase name="test_reconciles_batch" classname="gateway_contract">
+    <skipped message="Synthetic test dependency unavailable" />
+  </testcase>
+  <testcase name="test_persists_provider_reference" classname="gateway_contract" />
+  <testcase name="test_maps_rate_limit" classname="gateway_contract" />
+  <testcase name="test_maps_service_unavailable" classname="gateway_contract" />
+  <testcase name="test_rejects_duplicate_capture" classname="gateway_contract" />
+  <testcase name="test_reports_callback_lag" classname="gateway_contract" />
+  <testcase name="test_redacts_card_number" classname="gateway_contract" />
+  <testcase name="test_traces_provider_error" classname="gateway_contract" />
+</testsuite>

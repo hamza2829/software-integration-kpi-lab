@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic sample data -->
+<testsuite name="synthetic.order_validation" timestamp="2025-04-07T09:00:00+00:00" tests="18" failures="0" skipped="1" errors="0">
+  <testcase name="test_accepts_valid_cart" classname="order_validation" />
+  <testcase name="test_rejects_empty_cart" classname="order_validation" />
+  <testcase name="test_rejects_negative_quantity" classname="order_validation" />
+  <testcase name="test_requires_customer_id" classname="order_validation" />
+  <testcase name="test_caps_line_items" classname="order_validation" />
+  <testcase name="test_rejects_duplicate_sku" classname="order_validation" />
+  <testcase name="test_rounds_sales_tax" classname="order_validation">
+    <skipped message="Synthetic test dependency unavailable" />
+  </testcase>
+  <testcase name="test_preserves_currency" classname="order_validation" />
+  <testcase name="test_normalizes_sku" classname="order_validation" />
+  <testcase name="test_validates_coupon" classname="order_validation" />
+  <testcase name="test_rejects_expired_coupon" classname="order_validation" />
+  <testcase name="test_handles_free_shipping" classname="order_validation" />
+  <testcase name="test_calculates_subtotal" classname="order_validation" />
+  <testcase name="test_rejects_unknown_country" classname="order_validation" />
+  <testcase name="test_limits_address_length" classname="order_validation" />
+  <testcase name="test_masks_customer_email" classname="order_validation" />
+  <testcase name="test_normalizes_postal_code" classname="order_validation" />
+  <testcase name="test_rejects_unsupported_currency" classname="order_validation" />
+</testsuite>

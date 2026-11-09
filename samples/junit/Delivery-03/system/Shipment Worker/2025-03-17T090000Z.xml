@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic sample data -->
+<testsuite name="synthetic.fulfillment_journey" timestamp="2025-03-17T09:00:00+00:00" tests="18" failures="2" skipped="2" errors="0">
+  <testcase name="test_ships_paid_order" classname="fulfillment_journey" />
+  <testcase name="test_holds_unpaid_order" classname="fulfillment_journey">
+    <failure message="Synthetic regression in expected result" />
+  </testcase>
+  <testcase name="test_handles_carrier_outage" classname="fulfillment_journey" />
+  <testcase name="test_resumes_from_dead_letter" classname="fulfillment_journey" />
+  <testcase name="test_avoids_duplicate_label" classname="fulfillment_journey">
+    <skipped message="Synthetic test dependency unavailable" />
+  </testcase>
+  <testcase name="test_tracks_split_shipment" classname="fulfillment_journey" />
+  <testcase name="test_updates_tracking_link" classname="fulfillment_journey" />
+  <testcase name="test_handles_address_correction" classname="fulfillment_journey" />
+  <testcase name="test_emits_dispatch_event" classname="fulfillment_journey" />
+  <testcase name="test_stores_delivery_receipt" classname="fulfillment_journey">
+    <failure message="Synthetic regression in expected result" />
+  </testcase>
+  <testcase name="test_handles_canceled_order" classname="fulfillment_journey" />
+  <testcase name="test_retries_label_print" classname="fulfillment_journey" />
+  <testcase name="test_routes_international_order" classname="fulfillment_journey" />
+  <testcase name="test_prioritizes_express_order" classname="fulfillment_journey">
+    <skipped message="Synthetic test dependency unavailable" />
+  </testcase>
+  <testcase name="test_handles_pickup" classname="fulfillment_journey" />
+  <testcase name="test_skips_unavailable_inventory" classname="fulfillment_journey" />
+  <testcase name="test_releases_backorder" classname="fulfillment_journey" />
+  <testcase name="test_matches_manifest_total" classname="fulfillment_journey" />
+</testsuite>
