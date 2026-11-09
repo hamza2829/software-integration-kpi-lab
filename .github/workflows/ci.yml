@@ -1,0 +1,74 @@
+name: Integration KPI CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev]'
+      - run: ruff check --output-format github
+      - name: Check typography
+        run: |
+          python - <<'PY'
+          from subprocess import run
+
+          result = run(["git", "grep", "-nI", chr(0x2014)], check=False)
+          raise SystemExit(0 if result.returncode == 1 else 1)
+          PY
+
+  reports:
+    name: Tests and dashboard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev]'
+      - name: Test and measure coverage
+        shell: bash
+        run: |
+          pytest -q --cov=kpi_lab --cov-report=term-missing --cov-report=json:coverage.json \
+            | tee pytest-results.txt
+      - name: Generate synthetic inputs
+        run: integration-kpi-sample --output generated-samples --seed 2829 --deliveries 6
+      - uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-inputs
+          path: generated-samples/
+          if-no-files-found: error
+      - name: Build sample reports with the CLI
+        run: |
+          integration-kpi import --junit-dir generated-samples/junit --issues generated-samples/issues.csv
+          integration-kpi kpis --as-of 2025-04-11 > kpis.json
+          integration-kpi readiness --as-of 2025-04-11 --gates config/gates.yml \
+            --milestones generated-samples/milestones.yml > readiness.json
+          integration-kpi report --as-of 2025-04-11 --gates config/gates.yml \
+            --milestones generated-samples/milestones.yml --label 'Synthetic sample data' --out reports
+      - name: Capture dashboard preview
+        run: |
+          google-chrome --headless --no-sandbox --disable-dev-shm-usage --hide-scrollbars \
+            --window-size=1440,1340 --screenshot=reports/dashboard-preview.png \
+            "file://${PWD}/reports/dashboard.html"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dashboard
+          path: |
+            reports/
+            kpis.json
+            readiness.json
+            pytest-results.txt
+            coverage.json
+          if-no-files-found: error
